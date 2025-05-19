@@ -1,0 +1,7 @@
+pandas
+numpy
+tqdm
+torch
+sentence-transformers
+scikit-learn        # evaluation/debug tools
+matplotlib          # visual debugging

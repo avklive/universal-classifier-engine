@@ -1,0 +1,38 @@
+{
+  "tree_name": "intersport",
+  "model": "intfloat/e5-large",
+  "model_type": "e5",
+  "threshold": 0.6,
+  "top_k": 5,
+  "product_file": "./examples/sample_products.csv",
+  "category_file": "./examples/sample_categories.csv",
+  "fields": [
+    {
+      "name": "sport_match",
+      "product_fields": ["sport", "name"],
+      "category_fields": ["sport"],
+      "weight": 0.3,
+      "override_file": "./overrides/sport_override.csv"
+    },
+    {
+      "name": "gender_age_match",
+      "product_fields": ["gender", "age"],
+      "category_fields": ["gender"],
+      "weight": 0.2,
+      "override_file": "./overrides/gender_override.csv"
+    },
+    {
+      "name": "type_match",
+      "product_fields": ["product_type_code", "name", "description"],
+      "category_fields": ["product_type"],
+      "weight": 0.4,
+      "override_file": "./overrides/type_override.csv"
+    },
+    {
+      "name": "global_match",
+      "product_fields": ["*"],
+      "category_fields": ["*"],
+      "weight": 0.1
+    }
+  ]
+}
